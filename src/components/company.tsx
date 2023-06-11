@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import Lisbon from "../images/pexels-monica-silvestre-1548024.jpg";
 import Tech from "../images/pexels-cottonbro-studio-4065885.jpg";
-import AI from "/home/twigs/smp/v3/src/images/pexels-tara-winstead-8386361.jpg";
+import AI from "../images/pexels-tara-winstead-8386361.jpg";
 
 function Company({ lang }: { lang: string }) {
   const aboutSMP: { [index: string]: string } = {
