@@ -1,0 +1,74 @@
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2400" height="1800">
+  <rect x="0" y="0" width="100%" height="100%" fill="rgba(255,255,255,0)" fill-opacity="1"></rect>
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="2400" height="1800" viewBox="115 84.56 110.000000 80.880000" preserveAspectRatio="xMidYMid meet" color-interpolation-filters="sRGB">
+    <defs>
+      <linearGradient id="92" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#fa71cd" />
+        <stop offset="100%" stop-color="#9b59b6" />
+      </linearGradient>
+      <linearGradient id="93" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f9d423" />
+        <stop offset="100%" stop-color="#f83600" />
+      </linearGradient>
+      <linearGradient id="94" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0064d2" />
+        <stop offset="100%" stop-color="#1cb0f6" />
+      </linearGradient>
+      <linearGradient id="95" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f00978" />
+        <stop offset="100%" stop-color="#3f51b1" />
+      </linearGradient>
+      <linearGradient id="96" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#7873f5" />
+        <stop offset="100%" stop-color="#ec77ab" />
+      </linearGradient>
+      <linearGradient id="97" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f9d423" />
+        <stop offset="100%" stop-color="#e14fad" />
+      </linearGradient>
+      <linearGradient id="98" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#009efd" />
+        <stop offset="100%" stop-color="#2af598" />
+      </linearGradient>
+      <linearGradient id="99" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ffcc00" />
+        <stop offset="100%" stop-color="#00b140" />
+      </linearGradient>
+      <linearGradient id="100" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#d51007" />
+        <stop offset="100%" stop-color="#ff8177" />
+      </linearGradient>
+      <linearGradient id="102" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#a2b6df" />
+        <stop offset="100%" stop-color="#0c3483" />
+      </linearGradient>
+      <linearGradient id="103" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#7ac5d8" />
+        <stop offset="100%" stop-color="#eea2a2" />
+      </linearGradient>
+      <linearGradient id="104" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#00ecbc" />
+        <stop offset="100%" stop-color="#007adf" />
+      </linearGradient>
+      <linearGradient id="105" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#b88746" />
+        <stop offset="100%" stop-color="#fdf5a6" />
+      </linearGradient>
+    </defs>
+    <g class="imagesvg isNoFont" transform="translate(140,84.10354995727539)">
+      <g>
+        <rect fill="#333" fill-opacity="0" stroke-width="2" x="0" y="0" width="60" height="81.79290037624735" class="image-rect" />
+        <svg x="0" y="0" width="60" height="81.79290037624735" filtersec="colorsb4316909985" class="image-svg-svg primary" style="overflow: visible;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.0015106201171875 0 83.56697082519531 113.91999816894531">
+            <g fill-rule="evenodd">
+              <path d="M62.42 32l-5.69-5.69L32.78 50.3c-16.3 16.3-7.26 36 6.52 49.73l5.7 5.69 23.94-23.94C85.24 65.47 76.2 45.83 62.42 32zM28.68 46.2l28.05-28.05 9.79 9.79c16 16 25.53 38.92 6.52 57.94L45 113.92l-9.79-9.79c-16.01-16-25.54-38.92-6.53-57.93z" fill="#0b75d2" />
+              <path d="M53.34 23l-5.69-5.68-23.94 23.9C7.4 57.52 16.44 77.17 30.23 91l5.69 5.69 23.94-24C76.17 56.4 67.13 36.75 53.34 23zM19.61 37.12l28-28 9.79 9.78C73.45 34.87 83 57.79 64 76.8l-28 28.05-9.79-9.79C10.12 79.05.59 56.14 19.61 37.12z" fill="#00a9ff" />
+              <path d="M44.27 13.89L38.58 8.2l-23.95 24c-16.3 16.3-7.26 35.95 6.52 49.73l5.69 5.69 24-23.94c16.3-16.31 7.26-35.95-6.52-49.74zM10.53 28.05L38.58 0l9.79 9.79c16 16 25.53 38.92 6.52 57.94l-28 28L17.05 86c-16-16-25.53-38.94-6.52-57.95z" fill="#52cdff" />
+            </g>
+          </svg>
+        </svg>
+      </g>
+    </g>
+    <defs v-gra="od" />
+  </svg>
+</svg>
