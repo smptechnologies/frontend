@@ -3,7 +3,12 @@ import BlogPostListPreview from "./blogPostListPreview";
 import fs from "fs";
 import matter from "gray-matter";
 
-function BlogList({ lang }: { lang: string }) {
+
+
+
+
+
+export default function BlogList({ lang }: { lang: string }) {
   const postCollecton: { [index: string]: string } = {
     en: "The post collection",
     pt: "Os artigos",
@@ -32,4 +37,3 @@ function BlogList({ lang }: { lang: string }) {
   );
 }
 
-export default BlogList;
