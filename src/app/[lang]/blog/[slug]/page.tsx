@@ -1,31 +1,35 @@
 import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "fs";
 import matter from "gray-matter";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params: { lang, slug },
 }: {
   params: { lang: string; slug: string };
 }) {
-  const { data } = matter(fs.readFileSync(`src/posts/${slug}.mdx`));
-
-  return {
-    title: data.title,
-    openGraph: {
+  try {
+    const { data } = matter(fs.readFileSync(`src/posts/${slug}.mdx`));
+    return {
       title: data.title,
-      description: data.subtitle,
-      url: `https://smptech.pt/en/blog/${slug}`,
-      siteName: "SMP Technologies",
-      images: [
-        {
-          url: data.thumbnail,
-          width: 1200,
-          height: 627,
-        },
-      ],
-      type: "website",
-    },
-  };
+      openGraph: {
+        title: data.title,
+        description: data.subtitle,
+        url: `https://smptech.pt/en/blog/${slug}`,
+        siteName: "SMP Technologies",
+        images: [
+          {
+            url: data.thumbnail,
+            width: 1200,
+            height: 627,
+          },
+        ],
+        type: "website",
+      },
+    };
+  } catch (error) {
+    notFound();
+  }
 }
 
 export async function generateStaticParams({

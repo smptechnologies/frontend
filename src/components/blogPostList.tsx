@@ -19,7 +19,7 @@ function BlogList({ lang }: { lang: string }) {
 
   return (
     <div className="max-w-5xl lg:mx-auto mx-6 pt-10">
-      <h1 className="pt-10 pb-5 text-2xl text-gray-600 border-b">{postCollecton[lang]}</h1>
+      <h1 className="pt-10 pb-5 text-2xl border-b">{postCollecton[lang]}</h1>
 
       <ul className="divide-y">
         {blogPosts.map((post, index) => (
