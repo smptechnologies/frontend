@@ -26,12 +26,14 @@ function Team({ lang }: { lang: string }) {
     mail,
     linkedIn,
     Photo,
+    Description,
   }: {
     name: string;
     title: string;
     mail: string;
     linkedIn: string;
     Photo: StaticImageData;
+    Description: string;
   }) {
     return (
       <div className="flex flex-row justify-center lg:justify-start mx-6">
@@ -71,11 +73,8 @@ function Team({ lang }: { lang: string }) {
                 className="lg:my-auto"
               >
                 <Disclosure.Panel static>
-                  <p className="lg:text-xl text-lg  max-w-md mx-6 text-gray-600 min-w-full">
-                    Tomás is a software engineer with a master’s degree focused
-                    on machine learning and algorithms from Instituto Superior
-                    Técnico. In his master’s thesis, he studied game theory and
-                    network science, which continue to be his greatest passions.
+                  <p className="lg:text-lg text-md  max-w-md mx-6 text-gray-600 min-w-full">
+                    {Description}
                   </p>
                 </Disclosure.Panel>
               </Transition>
@@ -103,6 +102,7 @@ function Team({ lang }: { lang: string }) {
               mail="mailto:hugo.pitorro@smptech.pt"
               linkedIn="https://www.linkedin.com/in/hugo-henrique-pitorro/"
               Photo={Hugo}
+              Description="Hugo started his academic campaign in Computer Science at Instituto Superior Técnico, followed by a Master's degree at the Technical University of Munich which developed his interest in Machine Learning. He also spent his time as a Research Assistant at TUM, where he designed and authored publications within the Sebis Research Chair. Currently, he is contributing his technical acumen and research insight to the AI projects at SMP."
             ></Member>
             <Member
               name="Diogo Soares"
@@ -110,6 +110,7 @@ function Team({ lang }: { lang: string }) {
               mail="mailto:diogo.soares@smptech.pt"
               linkedIn="https://www.linkedin.com/in/diogo-sousa-soares/"
               Photo={Diogo}
+              Description="Diogo's academic journey in Computer Science at Instituto Superior Técnico and Technical University of Munich emphasized Machine Learning and Quantum Computing. His industry experience includes roles as a Software Engineer at Amazon Web Services (AWS), and a Machine Learning Engineer in a startup environment. Additionally, his time as a Visiting Researcher at Carnegie Mellon University expanded his research prowess. Diogo is excited to leverage his multifaceted experience in upcoming professional endeavors."
             ></Member>
             <Member
               name="Vasco Moura"
@@ -117,6 +118,7 @@ function Team({ lang }: { lang: string }) {
               mail="mailto:vasco.moura@smptech.pt"
               linkedIn="https://www.linkedin.com/in/vascodmoura/"
               Photo={Vasco}
+              Description="Vasco's academic background includes Business Administration and International Finance from Nova School of Business and Economics, and International Management from Nova SBE and Bocconi University. His practical experience is equally diverse, featuring strategic and finance roles at OC&C Strategy Consultants, Oliver Wyman, and Oxy Capital. Today, Vasco applies his management skills to drive the development of innovative AI solutions at SMP Technologies."
             ></Member>
           </div>
         </div>

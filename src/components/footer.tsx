@@ -36,7 +36,7 @@ function Footer({ lang }: { lang: string }) {
 
   return (
     <footer className="">
-      <div className="grid lg:grid-cols-4 gap-10 mx-auto max-w-2xl pt-10 ">
+      <div className="grid lg:grid-cols-4 gap-10 mx-auto max-w-2xl py-10 ">
         <Link href={`/${lang}`} className="mx-auto">
           <LogoWithText />
         </Link>

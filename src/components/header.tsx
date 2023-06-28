@@ -1,9 +1,10 @@
 "use client";
 
 import { Dialog } from "@headlessui/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import { LogoWithoutText } from "./svg";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 
 function Header({ lang }: { lang: string }) {
   const [top, setTop] = useState(true);
@@ -24,6 +25,25 @@ function Header({ lang }: { lang: string }) {
     pt: "Contacte-nos",
   };
 
+  const router = useRouter();
+  const pathname = usePathname();
+
+  function langSelector(e: ChangeEvent<HTMLSelectElement>) {
+    const selectedLanguage = e.target.value;
+
+    if (selectedLanguage !== lang) {
+      let newPath: string;
+
+      if (selectedLanguage === "en") {
+        newPath = pathname.replace(/^\/pt/, "/en");
+      } else {
+        newPath = pathname.replace(/^\/en/, "/pt");
+      }
+
+      router.push(newPath);
+    }
+  }
+
   // detect whether user has scrolled the page down by 10px
   useEffect(() => {
     const scrollHandler = () => {
@@ -40,7 +60,7 @@ function Header({ lang }: { lang: string }) {
         (!top && "bg-white backdrop-blur-sm shadow-lg md:bg-opacity-90")
       }`}
     >
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-20 px-7">
           {/* Logo */}
           <LogoWithoutText />
@@ -74,11 +94,11 @@ function Header({ lang }: { lang: string }) {
           {/* home + team + blog*/}
           <div className="hidden md:flex flex-grow">
             <div className="flex flex-grow ml-3 gap-5 t flex-wrap items-center">
-              <Link href={`/${lang}`}>
+              <a href={`/${lang}`}>
                 <span className="font-medium text-gray-600 hover:text-gray-900 pe-2 py-3 flex items-center transition duration-150 ease-in-out hover:">
                   {home[lang]}
                 </span>
-              </Link>
+              </a>
               <Link href={`/${lang}/about-us`}>
                 <span className="font-medium text-gray-600 hover:text-gray-900 px-2 py-3 flex items-center transition duration-150 ease-in-out">
                   {team[lang]}
@@ -99,21 +119,21 @@ function Header({ lang }: { lang: string }) {
                 name="language"
                 className="h-full rounded-md border-1 border-gray-600 shadow-lg bg-transparent py-0 pl-2 pr-7 text-gray-600 hover:text-gray-900 sm:text-sm"
                 value={lang}
-                onChange={(event) => {
-                  const selectedLanguage = event.target.value;
-                  const currentPath = window.location.pathname;
-                  const lang = currentPath.split("/")[1];
-                  if (selectedLanguage !== lang) {
-                    let newPath;
-                    if (selectedLanguage === "en") {
-                      newPath = currentPath.replace(/^\/pt/, "/en");
-                    } else if (selectedLanguage === "pt") {
-                      newPath = currentPath.replace(/^\/en/, "/pt");
-                      if (newPath === currentPath) {
-                        newPath = `/pt${currentPath}`;
+                onChange={(e) => {
+                  {
+                    const selectedLanguage = e.target.value;
+
+                    if (selectedLanguage !== lang) {
+                      let newPath: string;
+
+                      if (selectedLanguage === "en") {
+                        newPath = pathname.replace(/^\/pt/, "/en");
+                      } else {
+                        newPath = pathname.replace(/^\/en/, "/pt");
                       }
+
+                      router.push(newPath);
                     }
-                    window.location.href = `${window.location.origin}${newPath}${window.location.search}`;
                   }
                 }}
               >
@@ -204,23 +224,7 @@ function Header({ lang }: { lang: string }) {
                   name="language"
                   className="h-full rounded-md border-1 border-gray-600 shadow-lg bg-transparent mt-6 mx-7 text-gray-600 hover:text-gray-900 sm:text-sm"
                   value={lang}
-                  onChange={(event) => {
-                    const selectedLanguage = event.target.value;
-                    const currentPath = window.location.pathname;
-                    const lang = currentPath.split("/")[1];
-                    if (selectedLanguage !== lang) {
-                      let newPath;
-                      if (selectedLanguage === "en") {
-                        newPath = currentPath.replace(/^\/pt/, "/en");
-                      } else if (selectedLanguage === "pt") {
-                        newPath = currentPath.replace(/^\/en/, "/pt");
-                        if (newPath === currentPath) {
-                          newPath = `/pt${currentPath}`;
-                        }
-                      }
-                      window.location.href = `${window.location.origin}${newPath}${window.location.search}`;
-                    }
-                  }}
+                  onChange={langSelector}
                 >
                   <option value="en">EN</option>
                   <option value="pt">PT</option>
