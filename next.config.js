@@ -3,6 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   }, 
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   async redirects() {
     return [
       {
@@ -24,6 +25,3 @@ const withMDX = require('@next/mdx')({
 });
 module.exports = withMDX(nextConfig);
 
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-});
