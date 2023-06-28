@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
@@ -10,8 +10,6 @@ import Meeting from "../images/pexels-cottonbro-studio-7438102.jpg";
 
 function Features({ lang }: { lang: string }) {
   const [tab, setTab] = useState(1);
-
-
 
   const ourServices: { [index: string]: string } = {
     en: "Our services",
@@ -63,7 +61,6 @@ function Features({ lang }: { lang: string }) {
     pt: "Soluções de IT que aproveitam a IA para atender às necessidades do seu negócio.",
   };
 
-
   return (
     <section id="features" className="relative">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
@@ -73,9 +70,7 @@ function Features({ lang }: { lang: string }) {
           {/* Section header */}
           <div className="max-w-3xl lg:mx-auto mx-2 text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">{ourServices[lang]}</h1>
-            <p className="text-xl text-gray-600">
-              {serviceDescription[lang]}
-            </p>
+            <p className="text-xl text-gray-600">{serviceDescription[lang]}</p>
           </div>
 
           {/* Section content */}
@@ -203,9 +198,7 @@ function Features({ lang }: { lang: string }) {
             </div>
 
             {/* Tabs items */}
-            <div
-              className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 "
-            >
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 ">
               <div className="relative flex flex-col text-right my-7 lg:pb-16">
                 {/* Item 1 */}
                 <Transition
