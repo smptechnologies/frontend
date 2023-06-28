@@ -37,10 +37,16 @@ export async function generateStaticParams({
 }: {
   params: { lang: string; slug: string };
 }) {
-  const posts = fs.readdirSync("src/posts");
-  return posts.map((post) => ({
-    slug: post.replace(".mdx", ""),
-  }));
+  let slugs: { slug: string }[] = [];
+
+  try {
+    const posts = fs.readdirSync("src/posts");
+    slugs = posts.map((post) => ({
+      slug: post.replace(".mdx", ""),
+    }));
+  } catch (error) {}
+
+  return slugs;
 }
 
 export default async function Home({
