@@ -2,6 +2,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
+import { i18n } from "../../../../../i18n-config";
 
 export async function generateMetadata({
   params: { lang, slug },
@@ -37,16 +38,22 @@ export async function generateStaticParams({
 }: {
   params: { lang: string; slug: string };
 }) {
-  let slugs: { slug: string }[] = [];
+  let params: { lang: string; slug: string }[] = [];
 
   try {
-    const posts = fs.readdirSync("src/posts");
-    slugs = posts.map((post) => ({
-      slug: post.replace(".mdx", ""),
-    }));
+    const langs = i18n.locales;
+    const slugs = fs
+      .readdirSync("src/posts")
+      .map((post) => post.replace(".mdx", ""));
+
+    slugs.forEach((slug) => {
+      langs.forEach((lang) => {
+        params.push({ lang, slug });
+      });
+    });
   } catch (error) {}
 
-  return slugs;
+  return params;
 }
 
 export default async function Home({

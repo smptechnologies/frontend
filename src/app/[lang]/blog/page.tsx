@@ -1,7 +1,14 @@
 import { Locale } from "../../../../i18n-config";
-
 import BlogLanding from "../../../components/blogLanding";
 import BlogList from "../../../components/blogPostList";
+import { i18n } from "../../../../i18n-config";
+
+export async function generateStaticParams() {
+  return i18n.locales.map((l) => ({
+    lang: l,
+  }));
+}
+
 
 export default function IndexPage({
   params: { lang },
