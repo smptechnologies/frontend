@@ -3,24 +3,24 @@ import BlogPostListPreview from "./blogPostListPreview";
 import fs from "fs";
 import matter from "gray-matter";
 
-
-
-
-
-
 export default function BlogList({ lang }: { lang: string }) {
   const postCollecton: { [index: string]: string } = {
     en: "The post collection",
     pt: "Os artigos",
   };
 
-  const postPaths: string[] = fs
-    .readdirSync("src/posts")
-    .map((post) => `src/posts/${post}`);
+  let blogPosts: Meta[] = [];
 
-  let blogPosts: Meta[] = postPaths.map(
-    (post) => matter(fs.readFileSync(post)).data as Meta
-  );
+  try {
+    const postPaths: string[] = fs
+      .readdirSync("src/posts")
+      .map((post) => `src/posts/${post}`);
+
+    blogPosts = postPaths.map(
+      (post) => matter(fs.readFileSync(post)).data as Meta
+    );
+
+  } catch (error) {}
 
   return (
     <div className="max-w-5xl lg:mx-auto mx-6 pt-10">
@@ -36,4 +36,3 @@ export default function BlogList({ lang }: { lang: string }) {
     </div>
   );
 }
-

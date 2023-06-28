@@ -102,7 +102,7 @@ function Team({ lang }: { lang: string }) {
               mail="mailto:hugo.pitorro@smptech.pt"
               linkedIn="https://www.linkedin.com/in/hugo-henrique-pitorro/"
               Photo={Hugo}
-              Description="Hugo started his academic campaign in Computer Science at Instituto Superior Técnico, followed by a Master's degree at the Technical University of Munich which developed his interest in Machine Learning, with a particular emphasis on Natural Language Processing. He also spent his time as a Research Assistant at TUM, where he designed and authored publications within the Sebis Research Chair. Currently, he is contributing his technical acumen and research insight to the AI projects at SMP."
+              Description="Hugo started his academic campaign in Computer Science at Instituto Superior Técnico, followed by a Master's degree at the Technical University of Munich which developed his interest in Machine Learning. He also spent his time as a Research Assistant at TUM, where he designed and authored publications within the Sebis Research Chair. Currently, he is contributing his technical acumen and research insight to the AI projects at SMP."
             ></Member>
             <Member
               name="Diogo Soares"
