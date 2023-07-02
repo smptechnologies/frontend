@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "SMP Technologies",
   description: "AI Services born in Lisbon",
-  metadataBase: new URL("https://smptech.pt"),
-};
+  };
 
 export default function RootLayout({
   children,
