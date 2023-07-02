@@ -20,13 +20,7 @@ export async function generateMetadata({
         description: data.subtitle,
         url: `https://smptech.pt/en/blog/${slug}`,
         siteName: "SMP Technologies",
-        images: [
-          {
-            url: data.thumbnail,
-            width: 1200,
-            height: 627,
-          },
-        ],
+      
         type: "website",
       },
     };
