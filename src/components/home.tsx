@@ -1,5 +1,5 @@
 import React from "react";
-import Cover from "../images/herohome-cover.jpg";
+import Cover from "@/images/herohome-cover.jpg";
 import Image from "next/image";
 
 function HeroHome({ lang }: { lang: string }) {
@@ -19,7 +19,7 @@ function HeroHome({ lang }: { lang: string }) {
   };
 
   return (
-    <section id="home" className="relative ">
+    <div id="home" className="relative ">
       {/* Illustration behind hero content */}
 
       <Image
@@ -28,9 +28,8 @@ function HeroHome({ lang }: { lang: string }) {
         alt="Escalator stairs"
       ></Image>
 
-      {/* Hero content */}
       <div className="pt-48 pb-12 md:pt-48 md:pb-20 relative z-10" >
-        {/* Section header */}
+
         <div className="text-center pb-12 md:pb-16">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mt-4">
             {moto[lang]}
@@ -45,7 +44,7 @@ function HeroHome({ lang }: { lang: string }) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

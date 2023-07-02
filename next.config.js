@@ -13,6 +13,9 @@ const nextConfig = {
       },
     ]
   },
+  images: {
+    domains: ["images.unsplash.com"]
+  },
 };
  
 const withMDX = require('@next/mdx')({

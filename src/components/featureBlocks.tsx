@@ -1,8 +1,16 @@
 import React from "react";
 
-function Block({ title, subtitle, Icon }: {title: string, subtitle:string, Icon: React.FC}) {
+function Block({
+  title,
+  subtitle,
+  Icon,
+}: {
+  title: string;
+  subtitle: string;
+  Icon: React.FC;
+}) {
   return (
-    <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+    <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl ">
       <Icon />
       <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">
         {title}
@@ -12,8 +20,7 @@ function Block({ title, subtitle, Icon }: {title: string, subtitle:string, Icon:
   );
 }
 
-function FeaturesBlocks( {lang}: {lang: string}) {
-
+function FeaturesBlocks({ lang }: { lang: string }) {
   const howWeWork: { [index: string]: string } = {
     en: "How we work",
     pt: "Como trabalhamos",
@@ -93,9 +100,7 @@ function FeaturesBlocks( {lang}: {lang: string}) {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-6 md:pb-10">
             <h2 className="h2 mb-4">{howWeWork[lang]}</h2>
-            <p className="text-xl text-gray-600">
-              {stepByStep[lang]}
-            </p>
+            <p className="text-xl text-gray-600">{stepByStep[lang]}</p>
           </div>
 
           {/* Items */}

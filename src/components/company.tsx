@@ -17,7 +17,6 @@ function Company({ lang }: { lang: string }) {
   };
 
   return (
-    <section className="">
       <div className="mx-6 pb-12 pt-12 lg:pt-64 2xl:mx-52">
         <div className="grid lg:grid-cols-2 gap-16">
           <div className="lg:max-w-4xl lg:mx-auto ">
@@ -54,7 +53,6 @@ function Company({ lang }: { lang: string }) {
           </div>
         </div>
       </div>
-    </section>
   );
 }
 

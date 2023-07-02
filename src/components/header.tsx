@@ -60,8 +60,8 @@ function Header({ lang }: { lang: string }) {
         (!top && "bg-white backdrop-blur-sm shadow-lg md:bg-opacity-90")
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-20 px-7">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <LogoWithoutText />
           {/* hamburguer */}
@@ -167,8 +167,8 @@ function Header({ lang }: { lang: string }) {
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white px-5 pt-2 pb-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between px-7">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white pt-2 pb-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between px-6">
             <LogoWithoutText />
             <button
               id="cross"
@@ -200,20 +200,28 @@ function Header({ lang }: { lang: string }) {
                 <Link
                   href={`/${lang}`}
                   className="-mx-3 block rounded-lg px-3 py-4 text-xl font-medium leading-7 text-gray-600 hover:text-gray-900"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   {home[lang]}
                 </Link>
                 <Link
                   href={`/${lang}/about-us`}
                   className="-mx-3 block rounded-lg px-3 py-4 text-xl font-medium leading-7  text-gray-600 hover:text-gray-900"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   {team[lang]}
                 </Link>
                 <Link
                   href={`/${lang}/blog`}
-                  className="pointer-events-none cursor-default -mx-3 block rounded-lg px-3 py-4 text-xl font-medium leading-7  text-gray-600 hover:text-gray-900"
+                  className="-mx-3 block rounded-lg px-3 py-4 text-xl font-medium leading-7  text-gray-600 hover:text-gray-900"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                 >
-                  {/* TODO create language select popover*/}
                   Blog
                 </Link>
               </div>

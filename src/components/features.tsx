@@ -8,7 +8,7 @@ import Training from "../images/charlesdeluvio-rRWiVQzLm7k-unsplash.jpg";
 import Coding from "../images/arif-riyanto-vJP-wZ6hGBg-unsplash.jpg";
 import Meeting from "../images/pexels-cottonbro-studio-7438102.jpg";
 
-function Features({ lang }: { lang: string }) {
+export default function Features({ lang }: { lang: string }) {
   const [tab, setTab] = useState(1);
 
   const ourServices: { [index: string]: string } = {
@@ -68,7 +68,7 @@ function Features({ lang }: { lang: string }) {
       <div className="max-w-6xl lg:h-[70rem] h-[123rem] mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
           {/* Section header */}
-          <div className="max-w-3xl lg:mx-auto mx-2 text-center pb-12 md:pb-16">
+          <div className="max-w-3xl lg:mx-auto mx-2 lg:text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">{ourServices[lang]}</h1>
             <p className="text-xl text-gray-600">{serviceDescription[lang]}</p>
           </div>
@@ -76,10 +76,7 @@ function Features({ lang }: { lang: string }) {
           {/* Section content */}
           <div className="md:grid md:grid-cols-12 md:gap-6">
             {/* Content */}
-            <div
-              className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6"
-              data-aos="fade-right"
-            >
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
                 <h3 className="h3 mb-3">{servicesTitle[lang]}</h3>
                 <p className="text-xl text-gray-600">
@@ -92,8 +89,8 @@ function Features({ lang }: { lang: string }) {
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
                     tab !== 1
-                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
-                      : "bg-gray-200 border-transparent"
+                      ? "bg-white shadow-md border-gray-200 hover:border-gray-600 hover:bg-gray-100 hover:shadow-lg"
+                      : "bg-gray-300 border-transparent"
                   }`}
                   href="#0"
                   onClick={(e) => {
@@ -126,7 +123,7 @@ function Features({ lang }: { lang: string }) {
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
                     tab !== 2
-                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                      ? "bg-white shadow-md border-gray-200 hover:border-gray-600 hover:bg-gray-100 hover:shadow-lg"
                       : "bg-gray-200 border-transparent"
                   }`}
                   href="#0"
@@ -164,7 +161,7 @@ function Features({ lang }: { lang: string }) {
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
                     tab !== 3
-                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                      ? "bg-white shadow-md border-gray-200 hover:border-gray-600 hover:bg-gray-100  hover:shadow-lg"
                       : "bg-gray-200 border-transparent"
                   }`}
                   href="#0"
@@ -268,5 +265,3 @@ function Features({ lang }: { lang: string }) {
     </section>
   );
 }
-
-export default Features;
