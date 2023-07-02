@@ -4,7 +4,6 @@ import FeaturesBlocks from "@/components/featureBlocks";
 
 import { i18n } from "../../../i18n-config";
 
-
 export async function generateStaticParams() {
   return i18n.locales.map((l) => ({
     lang: l,
