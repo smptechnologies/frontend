@@ -15,13 +15,19 @@ export async function generateMetadata({
     const { data } = matter(fs.readFileSync(`src/posts/${slug}.mdx`));
     return {
       title: data.title,
-
+      description: data.subtitle,
       openGraph: {
         title: data.title,
         description: data.subtitle,
         url: `https://smptech.pt/en/blog/${slug}`,
         siteName: "SMP Technologies",
-
+        images: [
+          {
+            url: data.thumbnail,
+            width: 1200,
+            height: 627,
+          },
+        ],
         type: "website",
       },
     };
