@@ -63,7 +63,10 @@ function Header({ lang }: { lang: string }) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <LogoWithoutText />
+          <Link href={`/${lang}`}>
+            <LogoWithoutText />
+          </Link>
+
           {/* hamburguer */}
           <div className="flex md:hidden">
             <button
