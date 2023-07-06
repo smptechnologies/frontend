@@ -97,11 +97,11 @@ function Header({ lang }: { lang: string }) {
           {/* home + team + blog*/}
           <div className="hidden md:flex flex-grow">
             <div className="flex flex-grow ml-3 gap-5 t flex-wrap items-center">
-              <a href={`/${lang}`}>
+              <Link href={`/${lang}`}>
                 <span className="font-medium text-gray-600 hover:text-gray-900 pe-2 py-3 flex items-center transition duration-150 ease-in-out hover:">
                   {home[lang]}
                 </span>
-              </a>
+              </Link>
               <Link href={`/${lang}/about-us`}>
                 <span className="font-medium text-gray-600 hover:text-gray-900 px-2 py-3 flex items-center transition duration-150 ease-in-out">
                   {team[lang]}

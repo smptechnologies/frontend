@@ -8,6 +8,12 @@ import Lisbon from "@/images/pexels-monica-silvestre-1548024.jpg";
 import Tech from "@/images/pexels-cottonbro-studio-4065885.jpg";
 import AI from "@/images/pexels-tara-winstead-8386361.jpg";
 
+export const metadata = {
+  description: "What is the company and where it's headed.",
+};
+
+
+
 export async function generateStaticParams() {
   return i18n.locales.map((l) => ({
     lang: l,

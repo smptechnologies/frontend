@@ -7,6 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Gradient from "@/images/pexels-codioful-(formerly-gradienta)-7135014.jpg";
 
+
+export const metadata = {
+  description: "Blog collection of AI insights by AI experts.",
+};
+
 export async function generateStaticParams() {
   return i18n.locales.map((l) => ({
     lang: l,
