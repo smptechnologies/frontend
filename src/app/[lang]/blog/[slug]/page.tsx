@@ -1,6 +1,5 @@
 import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "fs";
-import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { i18n } from "../../../../../i18n-config";
 import Image from "next/image";

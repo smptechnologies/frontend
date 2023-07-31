@@ -2,7 +2,7 @@ import Features from "@/components/features";
 import FeaturesBlocks from "@/components/featureBlocks";
 import Image from "next/image";
 import Cover from "@/images/herohome-cover.jpg";
-
+import Moneris from "@/images/cropped-Logo_Moneris.webp";
 import { i18n } from "../../../i18n-config";
 
 export async function generateStaticParams() {
@@ -84,7 +84,7 @@ export default function IndexPage({
         <div className="lg:grid lg:grid-cols-3 max-w-6xl mx-auto">
           <Image
             className="mx-auto h-12 mt-16"
-            src="https://www.moneris.pt/wp-content/uploads/2020/02/cropped-Logo_Moneris.png.webp"
+            src={Moneris}
             alt=""
             width={200}
             height={20}
