@@ -69,7 +69,7 @@ export default function Features({ lang }: { lang: string }) {
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl lg:mx-auto mx-2 lg:text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">{ourServices[lang]}</h1>
+            <h2 className="h2 mb-4">{ourServices[lang]}</h2>
             <p className="text-xl text-gray-600">{serviceDescription[lang]}</p>
           </div>
 

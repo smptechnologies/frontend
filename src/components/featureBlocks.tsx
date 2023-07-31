@@ -92,7 +92,7 @@ function FeaturesBlocks({ lang }: { lang: string }) {
   };
 
   return (
-    <section className=" bg-gray-200  bg-gradient-to-t from-gray-200 to-white">
+    <section className=" ">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
 
       <div className=" max-w-6xl mx-auto px-4 sm:px-6">

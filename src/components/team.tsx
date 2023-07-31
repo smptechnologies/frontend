@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Disclosure, Transition } from "@headlessui/react";
+import Link from "next/link";
 import {
   ArrowRight,
   ArrowLeft,
@@ -44,12 +45,22 @@ function Member({
         <h1 className="text-xl pt-6 font-bold text-center mb-1">{name}</h1>
         <p className="text-gray-600 text-center">{title}</p>
         <div className="flex flex-row pt-4 gap-5 justify-center text-gray-600">
-          <a href={mail} target="_blank" rel="noopener noreferrer">
+          <Link
+            className="rounded-full bg-gray hover:text-gray-900"
+            href={mail}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Email />
-          </a>
-          <a href={linkedIn} target="_blank" rel="noopener noreferrer">
+          </Link>
+          <Link
+            className="hover:text-gray-900"
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Linkedin />
-          </a>
+          </Link>
         </div>
       </div>
       <Disclosure>

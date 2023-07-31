@@ -46,7 +46,7 @@ export default function IndexPage({
   };
 
   return (
-    <div className="bg-gradient-to-t from-gray-200 to-white ">
+    <div className=" ">
       <div className="mx-6 max-w-7xl md:mx-20 xl:mx-auto">
         {/* company header */}
         <div className="pb-12 pt-12 lg:pt-64 ">
