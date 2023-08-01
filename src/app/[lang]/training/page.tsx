@@ -300,7 +300,7 @@ export default async function Training({
 
         <div className="pt-12 max-w-7xl lg:mx-auto mx-6 grid lg:grid-cols-2">
           {featureCards[lang].map((feature, index) => (
-            <FeatureCard {...feature} />
+            <FeatureCard key={index} {...feature} />
           ))}
         </div>
       </div>

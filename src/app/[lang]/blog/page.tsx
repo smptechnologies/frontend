@@ -24,7 +24,7 @@ function PostPreview({ lang, post }: { lang: string; post: Meta }) {
   };
 
   return (
-    <div className="flex h-72 py-10 my-4 lg:px-10 hover:bg-gray-100 ring-1 ring-gray-200 hover:ring-gray-600 rounded-md">
+    <div className="flex py-10 my-4 lg:px-10 hover:bg-gray-100 ring-1 ring-gray-200 hover:ring-gray-600 rounded-md">
       <div className="hidden lg:grid relative lg:w-1/3">
         <Image
           className="shadow-md rounded-md object-none"
@@ -131,13 +131,13 @@ export default async function Blog({
       </div>
 
       <div className="max-w-7xl lg:mx-auto mx-6 rounded-md h-72 bg-slate-300 my-10  ring-1 ring-gray-200">
-        <div className="flex justify-between mx-16 h-full ">
-          <div className="flex flex-col justify-center">
-            <h3 className="h3 text-center">{featured[lang][0]}</h3>
-            <h3 className="h3 text-center">{featured[lang][1]}</h3>
+        <div className="flex lg:flex-row flex-col justify-evenly lg:justify-between lg:mx-16 mx-6 h-full ">
+          <div className="flex flex-col justify-center h3 text-center">
+            <h3 className="text-2xl lg:text-3xl">{featured[lang][0]}</h3>
+            <h3 className="text-2xl lg:text-3xl">{featured[lang][1]}</h3>
           </div>
           <div className="flex flex-col justify-center ">
-            <div className="flex gap-4">
+            <div className="flex justify-center gap-4">
               <Link
                 href={`/${lang}/contact`}
                 className="flex justify-center btn-sm rounded-md text-lg text-gray-200 bg-gray-900 hover:bg-gray-800 shadow-lg"
