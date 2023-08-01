@@ -22,7 +22,7 @@ type Feature = {
 
 type Lecturer = {
   name: string;
-  title: {[index:string]: string};
+  title: { [index: string]: string };
   image: string;
 };
 
@@ -78,13 +78,13 @@ export default async function Training({
         popularContent: "Most Popular",
         title: "Get to know AI",
         subtitle:
-          "An introduction to the technology and the possibilities it enables. From a brief introduction to understanding how to use it; open a new landscape for your professionals.",
+          "An introduction to the technology and the possibilities its opportunities. Explore how to use AI in your everyday life at work and optimize your productivity.",
         included: "What's included",
         features: [
           "Introduction to ChatGPT",
           "How to use it",
-          "Potential limitations",
-          "Basic use cases",
+          "Limitations",
+          "Use Cases",
           "Plugins & Code Interpreter",
         ],
       },
@@ -94,13 +94,13 @@ export default async function Training({
         popularContent: "Most Popular",
         title: "AI in your organization",
         subtitle:
-          "A more in-depth look at the technology. Starting from the same introduction, we go over use cases specific to your industry and discuss automating individual business processes.",
+          "A more in-depth look at the technology. We go over use cases specific to your industry and discuss automating business processes.",
         included: "What's included",
         features: [
-          "Introduction",
+          "Introduction to ChatGPT",
           "How to use it",
-          "Potential limitations",
-          "Basic Use Cases",
+          "Limitations",
+          "Use Cases",
           "Plugins & Code Interpreter",
           "Advanced Use Cases",
           "Incorporate AI in your organization",
@@ -114,13 +114,13 @@ export default async function Training({
         popularContent: "Mais popular",
         title: "Conhece AI",
         subtitle:
-          "Uma introdução à tecnologia e às possibilidades que traz. Desde uma introdução breve a perceber como usar; abra novas possibilidades aos seus profissionais.",
+          "Uma introdução à tecnologia e às suas oportunidades. Explore como usar AI no seu dia-a-dia empresarial e otimizar a sua produtividade.",
         included: "O que está incluído",
         features: [
           "Introdução ao ChatGPT",
           "Como usar",
-          "Limitações potenciais",
-          "Use cases básicos",
+          "Limitações",
+          "Use Cases",
           "Plugins & Code Interpreter",
         ],
       },
@@ -130,13 +130,13 @@ export default async function Training({
         popularContent: "Mais Popular",
         title: "AI na sua organização",
         subtitle:
-          "Uma abordagem mais profunda à tecnologia. Começando da mesma introdução, percorremos use cases específicos à sua indústria e discutimos como automatizar processos de negócio individuais.",
+          "Uma abordagem mais profunda à tecnologia. Exploramos Use Cases específicos à sua indústria e discutimos como automatizar processos de negócio.",
         included: "O que está incluído",
         features: [
           "Introdução ao ChatGPT",
           "Como usar",
-          "Limitações Potenciais",
-          "Use cases básicos",
+          "Limitações",
+          "Use Cases",
           "Plugins & Code Interpreter",
           "Use cases avançados",
           "Incorporar IA na sua organização",
@@ -174,8 +174,8 @@ export default async function Training({
       "How we provide your professionals with expert AI training.",
     ],
     pt: [
-      "Potencia a tua produtividade",
-      "Como oferecemos aos seus profissionais formações de IA.",
+      "Aumenta a tua produtividade",
+      "Capacite os profissionais com formações especializadas de AI.",
     ],
   };
 
@@ -194,13 +194,13 @@ export default async function Training({
     pt: [
       "Sê ágil",
       "Como podemos ajudar",
-      "A tecnologia AI está a evoluir muito rápido, continue na fronteira da inovação e inscreva-se nos nossos workshops com profissionais treinados em IA.",
+      "A tecnologia AI está a evoluir muito rápido, continue na fronteira da inovação e inscreva-se nos nossos workshops com profissionais treinados em AI.",
       "Mantenha-se atualizado",
-      "Ligue a sua força de trabalho aos novos desenvolvimentos em IA Generativa através de formações especializadas feitas pelos nossos profissionais.",
+      "Ligue a sua força de trabalho aos novos desenvolvimentos em Generative AI através de formações especializadas feitas pelos nossos profissionais.",
       "Automatização",
       "Aplique as novas tecnologias aos problemas das sua organização. Optimize os seus processos de negócio e automatize trabalho manual tedioso.",
       "Crescimento",
-      "Descubra novas oportunidades para crescer o seu negócio, potenciado pelas últimas tecnologias IA.",
+      "Descubra novas oportunidades para crescer o seu negócio, potenciado pelas últimas tecnologias AI.",
     ],
   };
 
@@ -215,14 +215,14 @@ export default async function Training({
       "We choose our personnel based on the leading AI knowledge we expect from our company.",
     ],
     pt: [
-      "Os formadores",
-      "Escolhemos os nossos colaboradores com base nas altas expetativas sobre conhecimento em IA que esperamos da nossa empresa.",
+      "Os nossos formadores",
+      "Escolhemos os nossos colaboradores com base com base no padrão elevado de conhecimento em AI que exigimos da nossa empresa.",
     ],
   };
 
   const interested: { [index: string]: string[] } = {
-    en: ["Interested?", "Reach out via our contact form.", "Contact Us"],
-    pt: ["Interessado?", "Contacte-nos através do form.", "Contacte-nos"],
+    en: ["Interested?", "Reach out via our contact form", "Contact Us"],
+    pt: ["Interessado?", "Contacte-nos através do form", "Contacte-nos"],
   };
 
   return (
@@ -237,7 +237,7 @@ export default async function Training({
       <div className="overflow-hidden bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            <div className="lg:pr-8 lg:pt-4">
+            <div className="lg:pr-8 ">
               <div className="lg:max-w-lg">
                 <h2 className="text-base font-semibold leading-7 text-blue-600">
                   {moveFaster[lang][0]}
