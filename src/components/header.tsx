@@ -20,6 +20,12 @@ function Header({ lang }: { lang: string }) {
     pt: "Equipa",
   };
 
+  const training: { [index: string]: string } = {
+    en: "Training",
+    pt: "Formações",
+  };
+
+
   const contactUs: { [index: string]: string } = {
     en: "Contact Us",
     pt: "Contacte-nos",
@@ -47,7 +53,7 @@ function Header({ lang }: { lang: string }) {
   // detect whether user has scrolled the page down by 10px
   useEffect(() => {
     const scrollHandler = () => {
-      window.pageYOffset > 10 ? setTop(false) : setTop(true);
+      window.scrollY > 10 ? setTop(false) : setTop(true);
     };
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
@@ -105,6 +111,11 @@ function Header({ lang }: { lang: string }) {
               <Link href={`/${lang}/about-us`}>
                 <span className="font-medium text-gray-600 hover:text-gray-900 px-2 py-3 flex items-center transition duration-150 ease-in-out">
                   {team[lang]}
+                </span>
+              </Link>
+              <Link href={`/${lang}/training`}>
+                <span className="font-medium text-gray-600 hover:text-gray-900 px-2 py-3 flex items-center transition duration-150 ease-in-out">
+                  {training[lang]}
                 </span>
               </Link>
               <Link href={`/${lang}/blog`}>
@@ -217,6 +228,15 @@ function Header({ lang }: { lang: string }) {
                   }}
                 >
                   {team[lang]}
+                </Link>
+                <Link
+                  href={`/${lang}/training`}
+                  className="-mx-3 block rounded-lg px-3 py-4 text-xl font-medium leading-7  text-gray-600 hover:text-gray-900"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                    {training[lang]}
                 </Link>
                 <Link
                   href={`/${lang}/blog`}

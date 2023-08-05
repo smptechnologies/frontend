@@ -3,7 +3,6 @@ import Link from "next/link";
 import { LogoWithText, Linkedin, Email } from "./svg";
 
 function Footer({ lang }: { lang: string }) {
-
   const resources: { [index: string]: string } = {
     en: "Resources",
     pt: "Recursos",
@@ -29,13 +28,13 @@ function Footer({ lang }: { lang: string }) {
     pt: "Sobre Nós",
   };
 
-  const tutorials: { [index: string]: string } = {
-    en: "Tutorials & Guides",
-    pt: "Tutoriais e Guias",
+  const training: { [index: string]: string } = {
+    en: "Training",
+    pt: "Formações",
   };
 
   return (
-    <footer className="">
+    <footer className="border-t">
       <div className="grid lg:grid-cols-4 gap-10 mx-auto max-w-2xl py-10 ">
         <Link href={`/${lang}`} className="mx-auto">
           <LogoWithText />
@@ -43,6 +42,12 @@ function Footer({ lang }: { lang: string }) {
         <div className="mx-auto w-32">
           <h1 className="text-gray-800 font-medium mb-4">{resources[lang]}</h1>
           <ul className="flex flex-col gap-2 text-sm text-gray-600 hover:text-gray-900">
+            <Link
+              href={`/${lang}/training`}
+              className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
+            >
+              <li>{training[lang]}</li>
+            </Link>
             <Link
               href={`/${lang}/blog`}
               className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"

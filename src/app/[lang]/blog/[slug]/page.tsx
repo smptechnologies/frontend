@@ -1,10 +1,10 @@
 import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "fs";
-import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { i18n } from "../../../../../i18n-config";
 import Image from "next/image";
 import Link from "next/link";
+import { Meta } from "@/components/types";
 
 export async function generateMetadata({
   params: { lang, slug },
@@ -12,7 +12,14 @@ export async function generateMetadata({
   params: { lang: string; slug: string };
 }) {
   try {
-    const { data } = matter(fs.readFileSync(`src/posts/${slug}.mdx`));
+    const fileContents = fs.readFileSync(`src/posts/${slug}.mdx`);
+    const { frontmatter } = await compileMDX({
+      source: fileContents,
+      options: { parseFrontmatter: true },
+    });
+
+    const data: Meta = frontmatter as Meta;
+
     return {
       title: data.title,
       description: data.subtitle,
@@ -67,9 +74,12 @@ export default async function Home({
   const slug_path = `src/posts/${slug}.mdx`;
   const fileContents = fs.readFileSync(slug_path, "utf8");
 
-  // Use gray-matter to parse the post metadata section
-  const { data, content } = matter(fileContents);
-  const mdxSource = await compileMDX({ source: content });
+  const { content, frontmatter } = await compileMDX({
+    source: fileContents,
+    options: { parseFrontmatter: true },
+  });
+
+  const data: Meta = frontmatter as Meta;
 
   return (
     <div className="">
@@ -88,16 +98,10 @@ export default async function Home({
                   target="_blank"
                   className="flex flex-row gap-5"
                 >
-                  <Image
-                    className="-mt-3 rounded-full shadow-xl"
-                    src={data.image}
-                    alt="Avatar"
-                    height={50}
-                    width={50}
-                  />
-                  <p className="hover:text-gray-800">{data.author}</p>
+                 
+                  <p className="text-lg hover:text-blue-600">{data.author}</p>
                 </Link>
-                <p className="font-mono text-gray-400">{data.date}</p>
+                <p className="text-lg font-mono text-gray-400">{data.date}</p>
               </div>
             </div>
           </div>
@@ -113,10 +117,10 @@ export default async function Home({
 
       <div
         id="post"
-        className="pt-10 pb-20 bg-gradient-to-t from-gray-200 to-white "
+        className="pt-10 pb-20 "
       >
         <div className="prose lg:prose-lg prose-slate lg:mx-auto mx-6 max-w-3xl ">
-          {mdxSource.content}
+          {content}
         </div>
       </div>
     </div>
