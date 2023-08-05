@@ -7,13 +7,30 @@
     <loc>https://smptech.pt/pt</loc>
     <lastmod>2023-04-06T15:02:24.021Z</lastmod>
   </url>
-
   <url>
     <loc>https://smptech.pt/en/about-us</loc>
     <lastmod>2023-04-06T15:02:24.021Z</lastmod>
   </url>
   <url>
-    <loc>https://smptech.pt/en/blog</loc>
+    <loc>https://smptech.pt/pt/about-us</loc>
     <lastmod>2023-04-06T15:02:24.021Z</lastmod>
   </url>
+  <url>
+    <loc>https://smptech.pt/en/training</loc>
+    <lastmod>2023-04-06T15:02:24.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smptech.pt/pt/training</loc>
+    <lastmod>2023-04-06T15:02:24.021Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://smptech.pt/enF/blog</loc>
+    <lastmod>2023-04-06T15:02:24.021Z</lastmod>
+  </url>
+    <url>
+    <loc>https://smptech.pt/pt/blog</loc>
+    <lastmod>2023-04-06T15:02:24.021Z</lastmod>
+  </url>
+
 </urlset>

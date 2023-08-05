@@ -12,10 +12,6 @@ export const metadata = {
 };
 
 
-export const metadata = {
-  description: "Blog collection of AI insights by AI experts.",
-};
-
 export async function generateStaticParams() {
   return i18n.locales.map((l) => ({
     lang: l,
