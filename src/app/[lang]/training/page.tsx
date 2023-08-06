@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Locale } from "../../../../i18n-config";
 import { Briefcase, Gear, Lightning } from "@/components/svg";
 import { Check } from "@/components/svg";
-import Cover from "@/images/workshop-cover.jpg";
+import Cover from "@/images/workshop.jpeg";
 
 export const metadata = {
   description:
