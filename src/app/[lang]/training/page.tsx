@@ -78,12 +78,16 @@ function FeatureCard(f: Feature) {
 
 function QuoteCard(f: Quote) {
   return (
-    <div className="py-10 px-6 lg:px-10">
-      <Image
-        className={`h-28 w-${f.width}`}
-        src={f.logo}
-        alt="MFIntegra"
-      ></Image>
+    <div className="py-10 px-6 lg:px-10 flex flex-col ">
+      <div className="">
+        <Image
+          className={`h-28 w-${f.width} shrink-0`}
+          src={f.logo}
+          alt="MFIntegra"
+          width={f.width}
+          height={112}
+        ></Image>
+      </div>
 
       <figure className="flex flex-col justify-between h-72">
         <blockquote className="pt-16 leading-8 text-gray-900 text-xl font-medium sm:leading-9">
@@ -261,12 +265,10 @@ export default async function Training({
     pt: ["Interessado?", "Contacte-nos através do form", "Contacte-nos"],
   };
 
-
   const testimonials: { [index: string]: string[] } = {
     en: ["Testimonials", "What our customers have to say"],
     pt: ["Testemunhos", "O que os nossos clientes dizem"],
   };
-
 
   const quotes: Quote[] = [
     {
@@ -275,7 +277,7 @@ export default async function Training({
         "O workshop de IA da SMP foi muito útil e enriquecedor. Um passo positivo para a evolução tecnológica da MFIntegra.",
       name: "Alexandre Moura",
       company: "CEO of MFIntegra",
-      width: 72,
+      width: 288,
     },
     {
       logo: LemosDesign,
@@ -283,7 +285,7 @@ export default async function Training({
         '"Foi uma experiência que nos permitiu aprender e compreender as funcionalidades que ferramentas como o ChatGPT e o Bard têm, e como podemos aplicá-las ao dia-a-dia da nossa empresa."',
       name: "Carlos Lemos",
       company: "CEO of Lemos Design",
-      width: 28,
+      width: 112,
     },
   ];
 
@@ -411,7 +413,9 @@ export default async function Training({
 
       <div id="testimonials" className="max-w-7xl mx-auto pb-48">
         <div className="flex flex-col justify-center text-center ">
-          <h1 className="h2 text-gray-900 sm:text-4xl">{testimonials[lang][0]}</h1>
+          <h1 className="h2 text-gray-900 sm:text-4xl">
+            {testimonials[lang][0]}
+          </h1>
           <h2 className="pt-2 text-lg leading-8 text-gray-600">
             {testimonials[lang][1]}
           </h2>
