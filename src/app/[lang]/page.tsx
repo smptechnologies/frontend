@@ -76,8 +76,6 @@ export default function IndexPage({
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
         <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
 
-        {/*TODO*/}
-        {/*
         <div className="pt-16 max-w-3xl lg:mx-auto mx-2 text-center pb-12 md:pb-16">
           <h2 className="h2 mb-4">{testimonials[lang]}</h2>
           <p className="text-xl text-gray-600">{testimonialsContent[lang]}</p>
@@ -101,7 +99,7 @@ export default function IndexPage({
                 </p>
               </blockquote>
               <figcaption className="mt-10">
-                <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+                <div className="mt-4 lg:flex items-center justify-center text-base text-center  lg:space-x-3 lg:text-left">
                   <div className="font-semibold text-gray-900">
                     Carlos Oliveira
                   </div>
@@ -110,7 +108,7 @@ export default function IndexPage({
                     width="3"
                     height="3"
                     aria-hidden="true"
-                    className="fill-gray-900"
+                    className="hidden lg:block fill-gray-900"
                   >
                     <circle cx="1" cy="1" r="1" />
                   </svg>
@@ -122,7 +120,6 @@ export default function IndexPage({
             </figure>
           </div>
         </div>
-        */}
       </div>
     </div>
   );

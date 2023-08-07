@@ -4,6 +4,9 @@ import { Locale } from "../../../../i18n-config";
 import { Briefcase, Gear, Lightning } from "@/components/svg";
 import { Check } from "@/components/svg";
 import Cover from "@/images/workshop.jpeg";
+import MFIntegra from "@/images/companies/mfintegra.png";
+import LemosDesign from "@/images/companies/lemos-design.png";
+import { StaticImageData } from "next/image";
 
 export const metadata = {
   description:
@@ -18,6 +21,14 @@ type Feature = {
   included: string;
   subtitle: string;
   features: string[];
+};
+
+type Quote = {
+  logo: StaticImageData;
+  quote: string;
+  name: string;
+  company: string;
+  width: number;
 };
 
 type Lecturer = {
@@ -61,6 +72,31 @@ function FeatureCard(f: Feature) {
           ))}
         </ul>
       </div>
+    </div>
+  );
+}
+
+function QuoteCard(f: Quote) {
+  return (
+    <div className="py-10 px-6 lg:px-10">
+      <Image
+        className={`h-28 w-${f.width}`}
+        src={f.logo}
+        alt="MFIntegra"
+      ></Image>
+
+      <figure className="flex flex-col justify-between h-72">
+        <blockquote className="pt-16 leading-8 text-gray-900 text-xl font-medium sm:leading-9">
+          <p className="">{f.quote}</p>
+        </blockquote>
+        <figcaption className="mt-10">
+          <div className="items-center justify-center text-base">
+            <div className="font-semibold text-gray-900">{f.name}</div>
+
+            <div className="text-gray-600">{f.company}</div>
+          </div>
+        </figcaption>
+      </figure>
     </div>
   );
 }
@@ -225,6 +261,32 @@ export default async function Training({
     pt: ["Interessado?", "Contacte-nos através do form", "Contacte-nos"],
   };
 
+
+  const testimonials: { [index: string]: string[] } = {
+    en: ["Testimonials", "What our customers have to say"],
+    pt: ["Testemunhos", "O que os nossos clientes dizem"],
+  };
+
+
+  const quotes: Quote[] = [
+    {
+      logo: MFIntegra,
+      quote:
+        "O workshop de IA da SMP foi muito útil e enriquecedor. Um passo positivo para a evolução tecnológica da MFIntegra.",
+      name: "Alexandre Moura",
+      company: "CEO of MFIntegra",
+      width: 72,
+    },
+    {
+      logo: LemosDesign,
+      quote:
+        '"Foi uma experiência que nos permitiu aprender e compreender as funcionalidades que ferramentas como o ChatGPT e o Bard têm, e como podemos aplicá-las ao dia-a-dia da nossa empresa."',
+      name: "Carlos Lemos",
+      company: "CEO of Lemos Design",
+      width: 28,
+    },
+  ];
+
   return (
     <div className="">
       <div id="landing" className=" h-screen bg-slate-300">
@@ -346,6 +408,21 @@ export default async function Training({
 
       {/*TODO whenever we have cool stats*/}
       <div id="stats"></div>
+
+      <div id="testimonials" className="max-w-7xl mx-auto pb-48">
+        <div className="flex flex-col justify-center text-center ">
+          <h1 className="h2 text-gray-900 sm:text-4xl">{testimonials[lang][0]}</h1>
+          <h2 className="pt-2 text-lg leading-8 text-gray-600">
+            {testimonials[lang][1]}
+          </h2>
+        </div>
+
+        <div className="pt-24 grid lg:grid-cols-2 lg:divide-x divide-y lg:divide-y-0 mx-6 gap-y-4">
+          {quotes.map((quote, index) => (
+            <QuoteCard {...quote} />
+          ))}
+        </div>
+      </div>
 
       <div
         id="contact"
