@@ -69,8 +69,8 @@ export default async function Blog({
   params: { lang: Locale };
 }) {
   const blog: { [index: string]: string } = {
-    en: "The Blog",
-    pt: "O Blog",
+    en: "Blog",
+    pt: "Blog",
   };
 
   const blogSubtitle: { [index: string]: string } = {

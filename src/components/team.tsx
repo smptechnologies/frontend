@@ -114,7 +114,7 @@ export default function Team({ lang }: { lang: string }) {
 
   const descriptionHugo: { [index: string]: string } = {
     en: "Hugo started his academic campaign in Computer Science at Instituto Superior Técnico, followed by a Master's degree at the Technical University of Munich which developed his interest in Artificial Intelligence. During his time at TUM, he worked as a Research Assistant in the Sebis Research Chair. Currently, he is contributing his technical acumen and research insight to the AI projects at SMP.",
-    pt: "O Hugo começou a vida académica no Instituto Superior Técnico em Engenharia Informática, seguindo para o mestrado na Technical University of Munich na mesma área, fomentando o seu interesse em Inteligência Artificial. Durante o mestrado, trabalhou como Research Assistant na equipa da Sebis Research. Atualmente está a contribuir com as suas capacidades técnicas e conhecimento teórico para os projetos de IA na SMP.",
+    pt: "O Hugo começou a vida académica no Instituto Superior Técnico em Engenharia Informática, seguindo para o mestrado na Technical University of Munich na mesma área, fomentando o seu interesse em Inteligência Artificial. Durante o mestrado, trabalhou como Research Assistant na equipa da Sebis Research. Atualmente está a contribuir com as suas capacidades técnicas e conhecimento teórico para os projetos de AI na SMP.",
   };
 
   const descriptionDiogo: { [index: string]: string } = {

@@ -38,7 +38,7 @@ export default function Features({ lang }: { lang: string }) {
 
   const trainingEmployeesContent: { [index: string]: string } = {
     en: "Tailored presentations and interactive tasks to increase your employees AI know-how.",
-    pt: "Apresentações personalizadas e tarefas interativas para aumentar o conhecimento de IA dos seus colaboradores.",
+    pt: "Apresentações personalizadas e tarefas interativas para aumentar o conhecimento de AI dos seus colaboradores.",
   };
 
   const businessConsulting: { [index: string]: string } = {
@@ -48,7 +48,7 @@ export default function Features({ lang }: { lang: string }) {
 
   const businessConsultingContent: { [index: string]: string } = {
     en: "We go over your business processes and identify what can be optimized with AI.",
-    pt: "Analisamos os seus processos de negócio e identificamos o que pode ser otimizado com IA.",
+    pt: "Analisamos os seus processos de negócio e identificamos o que pode ser otimizado com AI.",
   };
 
   const individualSolutions: { [index: string]: string } = {
@@ -58,7 +58,7 @@ export default function Features({ lang }: { lang: string }) {
 
   const individualSolutionsContent: { [index: string]: string } = {
     en: "IT solutions that leverage AI to achieve your business requirements.",
-    pt: "Soluções de IT que aproveitam a IA para atender às necessidades do seu negócio.",
+    pt: "Soluções de IT que aproveitam a AI para atender às necessidades do seu negócio.",
   };
 
   return (

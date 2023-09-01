@@ -92,7 +92,7 @@ function FeaturesBlocks({ lang }: { lang: string }) {
   };
 
   return (
-    <section className=" ">
+    <section className="border-t">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
 
       <div className=" max-w-6xl mx-auto px-4 sm:px-6">

@@ -3,9 +3,11 @@ import Link from "next/link";
 import { Locale } from "../../../../i18n-config";
 import { Briefcase, Gear, Lightning } from "@/components/svg";
 import { Check } from "@/components/svg";
-import Cover from "@/images/workshop.jpeg";
+import WorkshopCover from "@/images/workshop.jpeg";
+import Hero from "@/images/pexels-matheus-bertelli-16094044.jpg";
 import MFIntegra from "@/images/companies/mfintegra.png";
 import LemosDesign from "@/images/companies/lemos-design.png";
+
 import { StaticImageData } from "next/image";
 
 export const metadata = {
@@ -13,7 +15,7 @@ export const metadata = {
     "How we provide your professionals with expert Generative AI training.",
 };
 
-type Feature = {
+type FeatureCardProps = {
   call: string;
   popular: boolean;
   popularContent: string;
@@ -23,48 +25,58 @@ type Feature = {
   features: string[];
 };
 
-type Quote = {
+interface QuoteCardProps {
   logo: StaticImageData;
-  quote: string;
+  quote: { [index: string]: string };
   name: string;
   company: string;
   width: number;
-};
+  lang: string;
+}
 
-type Lecturer = {
+type LecturerProps = {
   name: string;
   title: { [index: string]: string };
   image: string;
+  lang: string;
 };
 
-function FeatureCard(f: Feature) {
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  call,
+  popular,
+  popularContent,
+  title,
+  included,
+  subtitle,
+  features,
+}) => {
   return (
     <div className="max-w-lg mx-auto rounded-lg ring-1 ring-gray-200 hover:bg-gray-100  hover:ring-gray-600 m-2">
       <div className="mx-12 my-6">
         <div className="flex flex-row justify-between text-blue-600 ">
-          <h3 className="font-bold pt-2">{f.call}</h3>
+          <h3 className="font-bold pt-2">{call}</h3>
           <h3
             className={`${
-              f.popular ? "" : "hidden"
+              popular ? "" : "hidden"
             } text-sm bg-blue-200 rounded-xl p-2`}
           >
-            {f.popularContent}
+            {popularContent}
           </h3>
         </div>
         <h3 className="pt-10 text-2xl font-bold tracking-tight text-gray-900">
-          {f.title}
+          {title}
         </h3>
-        <p className="mt-6 text-base leading-7 text-gray-600">{f.subtitle}</p>
+        <p className="mt-6 text-base leading-7 text-gray-600">{subtitle}</p>
         <div className="mt-10 flex items-center gap-x-4">
           <h4 className="flex-none text-sm font-semibold leading-6 text-blue-600">
-            {f.included}
+            {included}
           </h4>
         </div>
         <ul
           role="list"
           className="mt-8 pb-16 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 "
         >
-          {f.features.map((feature, index) => (
+          {features.map((feature, index) => (
             <li key={index} className="flex gap-x-3">
               <Check />
               {feature}
@@ -74,43 +86,77 @@ function FeatureCard(f: Feature) {
       </div>
     </div>
   );
-}
+};
 
-function QuoteCard(f: Quote) {
+const QuoteCard: React.FC<QuoteCardProps> = ({
+  logo,
+  quote,
+  name,
+  company,
+  width,
+  lang,
+}) => {
   return (
     <div className="py-10 px-6 lg:px-10 flex flex-col ">
       <div className="">
         <Image
-          className={`h-28 w-${f.width} shrink-0`}
-          src={f.logo}
+          className={`h-28 w-${width} shrink-0`}
+          src={logo}
           alt="MFIntegra"
-          width={f.width}
+          width={width}
           height={112}
         ></Image>
       </div>
 
       <figure className="flex flex-col justify-between h-72">
         <blockquote className="pt-16 leading-8 text-gray-900 text-xl font-medium sm:leading-9">
-          <p className="">{f.quote}</p>
+          <p className="">{quote[lang]}</p>
         </blockquote>
         <figcaption className="mt-10">
           <div className="items-center justify-center text-base">
-            <div className="font-semibold text-gray-900">{f.name}</div>
+            <div className="font-semibold text-gray-900">{name}</div>
 
-            <div className="text-gray-600">{f.company}</div>
+            <div className="text-gray-600">{company}</div>
           </div>
         </figcaption>
       </figure>
     </div>
   );
-}
+};
+
+const LecturerCard: React.FC<LecturerProps> = ({
+  name,
+  title,
+  image,
+  lang,
+}) => {
+  return (
+    <div className="flex items-center gap-x-6">
+      <Image
+        className="h-16 w-16 rounded-full"
+        src={image}
+        alt=""
+        width={256}
+        height={256}
+      />
+      <div>
+        <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
+          {name}
+        </h3>
+        <p className="text-sm font-semibold leading-6 text-blue-600">
+          {title[lang]}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 export default async function Training({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
-  const featureCards: { [index: string]: Feature[] } = {
+  const featureCards: { [index: string]: FeatureCardProps[] } = {
     en: [
       {
         call: "Standard",
@@ -149,7 +195,7 @@ export default async function Training({
     ],
     pt: [
       {
-        call: "Normal",
+        call: "Standard",
         popular: true,
         popularContent: "Mais popular",
         title: "Conhece AI",
@@ -179,32 +225,36 @@ export default async function Training({
           "Use Cases",
           "Plugins & Code Interpreter",
           "Use cases avançados",
-          "Incorporar IA na sua organização",
+          "Incorporar AI na sua organização",
         ],
       },
     ],
   };
 
-  const lecturers: Lecturer[] = [
+  const lecturers: LecturerProps[] = [
     {
       name: "Diogo Soares",
       title: { en: "Partner", pt: "Partner" },
       image: "/images/team-photos/diogo.jpg",
+      lang: lang,
     },
     {
       name: "Hugo Pitorro",
       title: { en: "Partner", pt: "Partner" },
       image: "/images/team-photos/hugo.jpg",
+      lang: lang,
     },
     {
       name: "Vasco Moura",
       title: { en: "Partner", pt: "Partner" },
       image: "/images/team-photos/vasco.jpeg",
+      lang: lang,
     },
     {
       name: "Sebastião Assunção",
       title: { en: "Lecturer", pt: "Formador" },
       image: "/images/team-photos/sebastiao.jpeg",
+      lang: lang,
     },
   ];
 
@@ -223,7 +273,7 @@ export default async function Training({
     en: [
       "Move faster",
       "How we help",
-      "AI technology is moving fast, don't lose track and sign up for workshops with our AI trained professionals.",
+      "AI technology is moving fast, don't lose track and sign up for workshops with our AI trained professionals",
       "Up-to-date.",
       "Connect your workforce with the latest developments in Generative AI, powered by specialized training from experts.",
       "Automation.",
@@ -234,7 +284,7 @@ export default async function Training({
     pt: [
       "Sê ágil",
       "Como podemos ajudar",
-      "A tecnologia AI está a evoluir muito rápido, continue na fronteira da inovação e inscreva-se nos nossos workshops com profissionais treinados em AI.",
+      "A tecnologia AI está a evoluir muito rápido, continue na fronteira da inovação e inscreva-se nos nossos workshops com profissionais treinados em AI",
       "Mantenha-se atualizado",
       "Ligue a sua força de trabalho aos novos desenvolvimentos em Generative AI através de formações especializadas feitas pelos nossos profissionais.",
       "Automatização",
@@ -245,18 +295,18 @@ export default async function Training({
   };
 
   const options: { [index: string]: string[] } = {
-    en: ["Our options", "What you can expect from our training."],
-    pt: ["As nossas opções", "O que pode esperar das nossas formações."],
+    en: ["Our options", "What you can expect from our training"],
+    pt: ["As nossas opções", "O que pode esperar das nossas formações"],
   };
 
   const personnel: { [index: string]: string[] } = {
     en: [
       "Meet the lecturers",
-      "We choose our personnel based on the leading AI knowledge we expect from our company.",
+      "We choose our personnel based on the leading AI knowledge we expect from our company",
     ],
     pt: [
       "Os nossos formadores",
-      "Escolhemos os nossos colaboradores com base com base no padrão elevado de conhecimento em AI que exigimos da nossa empresa.",
+      "Escolhemos os nossos colaboradores com base com base no padrão elevado de conhecimento em AI que exigimos da nossa empresa",
     ],
   };
 
@@ -270,35 +320,50 @@ export default async function Training({
     pt: ["Testemunhos", "O que os nossos clientes dizem"],
   };
 
-  const quotes: Quote[] = [
+  const quotes: QuoteCardProps[] = [
     {
       logo: MFIntegra,
-      quote:
-        "O workshop de IA da SMP foi muito útil e enriquecedor. Um passo positivo para a evolução tecnológica da MFIntegra.",
+      quote: {
+        en: "SMP's AI workshop was very useful and enriching. A positive step in MFIntegra's technological evolution.",
+        pt: "O workshop de AI da SMP foi muito útil e enriquecedor. Um passo positivo para a evolução tecnológica da MFIntegra.",
+      },
       name: "Alexandre Moura",
       company: "CEO of MFIntegra",
       width: 288,
+      lang: lang,
     },
     {
       logo: LemosDesign,
-      quote:
-        '"Foi uma experiência que nos permitiu aprender e compreender as funcionalidades que ferramentas como o ChatGPT e o Bard têm, e como podemos aplicá-las ao dia-a-dia da nossa empresa."',
+      quote: {
+        en: "It was an experience that allowed us to learn and understand the functionalities that tools like ChatGPT and Bard have, and how we can apply them in our company's day-to-day.",
+        pt: "Foi uma experiência que nos permitiu aprender e compreender as funcionalidades que ferramentas como o ChatGPT e o Bard têm, e como podemos aplicá-las ao dia-a-dia da nossa empresa.",
+      },
       name: "Carlos Lemos",
       company: "CEO of Lemos Design",
       width: 112,
+      lang: lang,
     },
   ];
 
   return (
     <div className="">
-      <div id="landing" className=" h-screen bg-slate-300">
-        <div className="mx-6 lg:mx-auto max-w-7xl flex flex-col justify-center text-center h-full ">
-          <h1 className="h1">{hero[lang][0]}</h1>
-          <h2 className="pt-6 text-xl text-gray-600">{hero[lang][1]}</h2>
+      <div id="hero" className="relative ">
+
+        <Image
+          className="absolute left-0 top-0 h-[36rem] w-full object-position-center object-cover min-h-full opacity-40 z-0"
+          src={Hero}
+          alt="ChatGPT"
+        ></Image>
+
+        <div className="pt-48 pb-12 md:pt-48 md:pb-20 relative z-10">
+          <div className="text-center pb-12 md:pb-16">
+            <h1 className="h1">{hero[lang][0]}</h1>
+            <h1 className="pt-6 text-xl text-gray-600">{hero[lang][1]}</h1>
+          </div>
         </div>
       </div>
 
-      <div className="overflow-hidden bg-white py-24 sm:py-32">
+      <div className="overflow-hidden bg-white lg:mt-64 mt-48 pb-44">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 ">
@@ -344,7 +409,7 @@ export default async function Training({
               </div>
             </div>
             <Image
-              src={Cover}
+              src={WorkshopCover}
               alt="Product screenshot"
               className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
               width="2432"
@@ -385,23 +450,7 @@ export default async function Training({
           >
             {lecturers.map((lecturer, index) => (
               <li key={index}>
-                <div className="flex items-center gap-x-6">
-                  <Image
-                    className="h-16 w-16 rounded-full"
-                    src={lecturer.image}
-                    alt=""
-                    width={256}
-                    height={256}
-                  />
-                  <div>
-                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
-                      {lecturer.name}
-                    </h3>
-                    <p className="text-sm font-semibold leading-6 text-blue-600">
-                      {lecturer.title[lang]}
-                    </p>
-                  </div>
-                </div>
+                <LecturerCard {...lecturer} />
               </li>
             ))}
           </ul>
@@ -421,11 +470,13 @@ export default async function Training({
           </h2>
         </div>
 
-        <div className="pt-24 grid lg:grid-cols-2 lg:divide-x divide-y lg:divide-y-0 mx-6 gap-y-4">
+        <ul className="pt-24 grid lg:grid-cols-2 lg:divide-x divide-y lg:divide-y-0 mx-6 gap-y-4">
           {quotes.map((quote, index) => (
-            <QuoteCard {...quote} />
+            <li key={index}>
+              <QuoteCard {...quote} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <div
@@ -441,7 +492,7 @@ export default async function Training({
             height={133}
           />
         </div>
-        <div className="flex flex-col text-center justify-center py-10 lg:py-0">
+        <div className="flex flex-col text-center justify-center pt-10 lg:py-0">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             {interested[lang][0]}
           </h1>
