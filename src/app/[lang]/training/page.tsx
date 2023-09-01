@@ -110,7 +110,7 @@ const QuoteCard: React.FC<QuoteCardProps> = ({
 
       <figure className="flex flex-col justify-between h-72">
         <blockquote className="pt-16 leading-8 text-gray-900 text-xl font-medium sm:leading-9">
-          <p className="">{quote[lang]}</p>
+          <p className="">"{quote[lang]}"</p>
         </blockquote>
         <figcaption className="mt-10">
           <div className="items-center justify-center text-base">
@@ -261,11 +261,11 @@ export default async function Training({
   const hero: { [index: string]: string[] } = {
     en: [
       "Boost your productivity",
-      "How we provide your professionals with expert AI training.",
+      "How we provide your professionals with expert AI training",
     ],
     pt: [
       "Aumenta a tua produtividade",
-      "Capacite os profissionais com formações especializadas de AI.",
+      "Capacite os profissionais com formações especializadas de AI",
     ],
   };
 
@@ -273,7 +273,7 @@ export default async function Training({
     en: [
       "Move faster",
       "How we help",
-      "AI technology is moving fast, don't lose track and sign up for workshops with our AI trained professionals",
+      "AI technology is moving fast, don't lose track and sign up for workshops with our AI trained professionals.",
       "Up-to-date.",
       "Connect your workforce with the latest developments in Generative AI, powered by specialized training from experts.",
       "Automation.",
@@ -284,7 +284,7 @@ export default async function Training({
     pt: [
       "Sê ágil",
       "Como podemos ajudar",
-      "A tecnologia AI está a evoluir muito rápido, continue na fronteira da inovação e inscreva-se nos nossos workshops com profissionais treinados em AI",
+      "A tecnologia AI está a evoluir muito rápido, continue na fronteira da inovação e inscreva-se nos nossos workshops com profissionais treinados em AI.",
       "Mantenha-se atualizado",
       "Ligue a sua força de trabalho aos novos desenvolvimentos em Generative AI através de formações especializadas feitas pelos nossos profissionais.",
       "Automatização",
@@ -302,11 +302,11 @@ export default async function Training({
   const personnel: { [index: string]: string[] } = {
     en: [
       "Meet the lecturers",
-      "We choose our personnel based on the leading AI knowledge we expect from our company",
+      "We choose our personnel based on the leading AI knowledge we expect from our company.",
     ],
     pt: [
       "Os nossos formadores",
-      "Escolhemos os nossos colaboradores com base com base no padrão elevado de conhecimento em AI que exigimos da nossa empresa",
+      "Escolhemos os nossos colaboradores com base com base no padrão elevado de conhecimento em AI que exigimos da nossa empresa.",
     ],
   };
 

@@ -27,8 +27,8 @@ export default function IndexPage({
   };
 
   const briefDescription: { [index: string]: string } = {
-    en: "Our AI services empower your business processes and can uncover untapped potential revenue.",
-    pt: "Os nossos serviços de IA permitem otimizar os seus processos de negócio e descobrir receitas ainda por explorar.",
+    en: "Our AI services empower your business processes and can uncover untapped potential revenue",
+    pt: "Os nossos serviços de IA permitem otimizar os seus processos de negócio e descobrir receitas ainda por explorar",
   };
 
   const testimonials: { [index: string]: string } = {
