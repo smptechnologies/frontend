@@ -4,10 +4,9 @@ import { Locale } from "../../../../i18n-config";
 import { Briefcase, Gear, Lightning } from "@/components/svg";
 import { Check } from "@/components/svg";
 import WorkshopCover from "@/images/workshop.jpeg";
-import Hero from "@/images/pexels-matheus-bertelli-16094044.jpg";
 import MFIntegra from "@/images/companies/mfintegra.png";
 import LemosDesign from "@/images/companies/lemos-design.png";
-import Moneris from "@/images/cropped-Logo_Moneris.webp";
+import Hero from "@/images/pexels-周-康-747079.jpg";
 
 import { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
@@ -362,36 +361,42 @@ export default async function Training({
 
   return (
     <div className="">
-      <div className="pt-32">
-        <div className="md:px-16 py-32 bg-slate-300 max-w-7xl mx-6 md:mx-auto rounded-md">
-          <div className="mb-8 lg:mb-12 mx-4 text-center">
-            <h1 className="h1">{hero[lang][0]}</h1>
-            <h2 className="pt-6 text-xl text-gray-600">{hero[lang][1]}</h2>
-          </div>
+      <div className="pt-24 md:py-32">
+        <div className="relative max-w-7xl md:px-16 py-32 mx-6 md:mx-auto h-[48rem]  ">
+          <div className="md:mt-64">
+            <div className="mb-8 lg:mb-12 mx-auto text-center">
+              <h1 className="h1">{hero[lang][0]}</h1>
+              <h2 className="pt-6 text-xl md:text-gray-300">{hero[lang][1]}</h2>
+            </div>
 
-          <div className="flex justify-center">
-            <Link
-              href={`/${lang}/contact`}
-              className="btn-sm rounded-md text-white bg-gray-900 hover:bg-gray-800 ml-3 shadow-lg"
-            >
-              <span>{contactUs[lang]}</span>
-              <svg
-                className="w-3 h-3 fill-current flex-shrink-0 ml-2 -mr-1"
-                viewBox="0 0 12 12"
-                xmlns="http://www.w3.org/2000/svg"
+            <div className="flex justify-center">
+              <Link
+                href={`/${lang}/contact`}
+                className="btn-sm rounded-md text-white bg-gray-900 hover:bg-gray-800 ml-3 shadow-lg"
               >
-                <path
-                  d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </Link>
+                <span>{contactUs[lang]}</span>
+                <svg
+                  className="w-3 h-3 fill-current flex-shrink-0 ml-2 -mr-1"
+                  viewBox="0 0 12 12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                    fillRule="nonzero"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
+          <Image
+            src={Hero}
+            alt="hero"
+            className="-z-10  absolute inset-x-0 top-0 hidden md:block mt-16 h-full w-full rounded-md"
+          />
         </div>
       </div>
 
-     
-      <div className="overflow-hidden bg-white mt-32 pb-44">
+      <div className="overflow-hidden bg-white my-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 ">
