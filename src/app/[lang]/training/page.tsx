@@ -362,44 +362,36 @@ export default async function Training({
 
   return (
     <div className="">
-   
-      <section className="block">
-        <div className="py-16 md:py-24 lg:py-32 px-5 md:px-10">
-          <div className="mx-auto w-full max-w-7xl bg-slate-300 px-4 py-32 rounded-md mt-16">
-            <div className="mx-auto w-full max-w-3xl max-[479px]:px-2">
-              <div className="text-center">
-                <div className="mb-5 md:mb-6 lg:mb-8">
-                  <h1 className="font-bold max-[991px]:mx-auto max-[991px]:max-w-[720px] text-3xl md:text-5xl">
-                    {hero[lang][0]}
-                  </h1>
-                  <h2 className="pt-6 text-xl text-gray-600">
-                    {hero[lang][1]}
-                  </h2>
-                </div>
+      <div className="pt-32">
+        <div className="md:px-16 py-32 bg-slate-300 max-w-7xl mx-6 md:mx-auto rounded-md">
+          <div className="mb-8 lg:mb-12 mx-4 text-center">
+            <h1 className="h1">{hero[lang][0]}</h1>
+            <h2 className="pt-6 text-xl text-gray-600">{hero[lang][1]}</h2>
+          </div>
 
-                <Link
-                  href={`/${lang}/contact`}
-                  className="btn-sm rounded-md text-white bg-gray-900 hover:bg-gray-800 ml-3 shadow-lg"
-                >
-                  <span>{contactUs[lang]}</span>
-                  <svg
-                    className="w-3 h-3 fill-current flex-shrink-0 ml-2 -mr-1"
-                    viewBox="0 0 12 12"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                      fillRule="nonzero"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+          <div className="flex justify-center">
+            <Link
+              href={`/${lang}/contact`}
+              className="btn-sm rounded-md text-white bg-gray-900 hover:bg-gray-800 ml-3 shadow-lg"
+            >
+              <span>{contactUs[lang]}</span>
+              <svg
+                className="w-3 h-3 fill-current flex-shrink-0 ml-2 -mr-1"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                  fillRule="nonzero"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
-      </section>
+      </div>
 
-      <div className="overflow-hidden bg-white lg:mt-32 pb-44">
+     
+      <div className="overflow-hidden bg-white mt-32 pb-44">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 ">
@@ -455,7 +447,7 @@ export default async function Training({
         </div>
       </div>
 
-      <div id="features" className="pt-32">
+      <div id="features" className="pt-16 md:pt-32">
         <div className="flex flex-col justify-center text-center ">
           <h1 className="h2 text-gray-900 sm:text-4xl">{options[lang][0]}</h1>
           <h2 className="pt-2 text-lg leading-8 text-gray-600">
