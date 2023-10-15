@@ -4,11 +4,13 @@ import { Locale } from "../../../../i18n-config";
 import { Briefcase, Gear, Lightning } from "@/components/svg";
 import { Check } from "@/components/svg";
 import WorkshopCover from "@/images/workshop.jpeg";
-import Hero from "@/images/pexels-matheus-bertelli-16094044.jpg";
 import MFIntegra from "@/images/companies/mfintegra.png";
 import LemosDesign from "@/images/companies/lemos-design.png";
+import Hero from "@/images/pexels-周-康-747079.jpg";
 
 import { StaticImageData } from "next/image";
+import { cn } from "@/lib/utils";
+import MainQuote from "@/components/mainQuote";
 
 export const metadata = {
   description:
@@ -51,7 +53,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   features,
 }) => {
   return (
-    <div className="max-w-lg mx-auto rounded-lg ring-1 ring-gray-200 hover:bg-gray-100  hover:ring-gray-600 m-2">
+    <div
+      className={cn(
+        "max-w-lg mx-auto rounded-lg hover:bg-gray-100 m-2 ring-1",
+        popular
+          ? "ring-blue-400 hover:ring-blue-600"
+          : "ring-gray-200 hover:ring-gray-600"
+      )}
+    >
       <div className="mx-12 my-6">
         <div className="flex flex-row justify-between text-blue-600 ">
           <h3 className="font-bold pt-2">{call}</h3>
@@ -265,7 +274,7 @@ export default async function Training({
     ],
     pt: [
       "Aumenta a tua produtividade",
-      "Capacite os profissionais com formações especializadas de AI",
+      "Capacite os seus profissionais com formações especializadas de AI",
     ],
   };
 
@@ -345,25 +354,49 @@ export default async function Training({
     },
   ];
 
+  const contactUs: { [index: string]: string } = {
+    en: "Contact Us",
+    pt: "Contacte-nos",
+  };
+
   return (
     <div className="">
-      <div id="hero" className="relative ">
+      <div className="pt-24 md:py-32">
+        <div className="relative max-w-7xl md:px-16 py-32 mx-6 md:mx-auto h-[48rem]  ">
+          <div className="md:mt-64">
+            <div className="mb-8 lg:mb-12 mx-auto text-center">
+              <h1 className="h1">{hero[lang][0]}</h1>
+              <h2 className="pt-6 text-xl md:text-gray-300">{hero[lang][1]}</h2>
+            </div>
 
-        <Image
-          className="absolute left-0 top-0 h-[36rem] w-full object-position-center object-cover min-h-full opacity-40 z-0"
-          src={Hero}
-          alt="ChatGPT"
-        ></Image>
-
-        <div className="pt-48 pb-12 md:pt-48 md:pb-20 relative z-10">
-          <div className="text-center pb-12 md:pb-16">
-            <h1 className="h1">{hero[lang][0]}</h1>
-            <h1 className="pt-6 text-xl text-gray-600">{hero[lang][1]}</h1>
+            <div className="flex justify-center">
+              <Link
+                href={`/${lang}/contact`}
+                className="btn-sm rounded-md text-white bg-gray-900 hover:bg-gray-800 ml-3 shadow-lg"
+              >
+                <span>{contactUs[lang]}</span>
+                <svg
+                  className="w-3 h-3 fill-current flex-shrink-0 ml-2 -mr-1"
+                  viewBox="0 0 12 12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                    fillRule="nonzero"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
+          <Image
+            src={Hero}
+            alt="hero"
+            className="-z-10  absolute inset-x-0 top-0 hidden md:block mt-16 h-full w-full rounded-md"
+          />
         </div>
       </div>
 
-      <div className="overflow-hidden bg-white lg:mt-64 mt-48 pb-44">
+      <div className="overflow-hidden bg-white my-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 ">
@@ -419,7 +452,7 @@ export default async function Training({
         </div>
       </div>
 
-      <div id="features" className="">
+      <div id="features" className="pt-16 md:pt-32">
         <div className="flex flex-col justify-center text-center ">
           <h1 className="h2 text-gray-900 sm:text-4xl">{options[lang][0]}</h1>
           <h2 className="pt-2 text-lg leading-8 text-gray-600">
@@ -469,7 +502,6 @@ export default async function Training({
             {testimonials[lang][1]}
           </h2>
         </div>
-
         <ul className="pt-24 grid lg:grid-cols-2 lg:divide-x divide-y lg:divide-y-0 mx-6 gap-y-4">
           {quotes.map((quote, index) => (
             <li key={index}>
@@ -477,6 +509,7 @@ export default async function Training({
             </li>
           ))}
         </ul>
+        <MainQuote className="mt-48 lg:mt-16 mx-6" lang={lang} />
       </div>
 
       <div
