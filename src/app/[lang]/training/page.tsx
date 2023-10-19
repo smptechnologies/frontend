@@ -366,7 +366,7 @@ export default async function Training({
           <div className="md:mt-64">
             <div className="mb-8 lg:mb-12 mx-auto text-center">
               <h1 className="h1">{hero[lang][0]}</h1>
-              <h2 className="pt-6 text-xl md:text-gray-300">{hero[lang][1]}</h2>
+              <h2 className="pt-6 text-xl md:text-gray-600">{hero[lang][1]}</h2>
             </div>
 
             <div className="flex justify-center">
@@ -391,7 +391,7 @@ export default async function Training({
           <Image
             src={Hero}
             alt="hero"
-            className="-z-10  absolute inset-x-0 top-0 hidden md:block mt-16 h-full w-full rounded-md"
+            className="-z-10 absolute inset-x-0 top-0 hidden md:block mt-16 h-full w-full rounded-md opacity-50"
           />
         </div>
       </div>
